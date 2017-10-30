@@ -183,7 +183,7 @@ if [ -f /etc/debian_version ]; then
   		echo "Phpmyadmin is accessibile at  http://$CFG_HOSTNAME_FQDN:8081/phpmyadmin or http://IP_ADDRESS:8081/phpmyadmin";
 	fi
 	if [ "$DISTRO" == "debian8" ] && [ "$CFG_WEBMAIL" == "roundcube" ]; then
-		echo "Webmail is accessibile at  https://$CFG_HOSTNAME_FQDN/webmail or https://IP_ADDRESS/webmail";
+		echo "Webmail is accessibile at  https://$CFG_HOSTNAME_FQDN:8081/webmail or https://IP_ADDRESS:8081/webmail";
 	else
 		echo "Webmail is accessibile at  http://$CFG_HOSTNAME_FQDN:8081/webmail or http://IP_ADDRESS:8081/webmail";
 	fi
@@ -224,7 +224,7 @@ else
 		echo -e "${green}Well done! ISPConfig installed and configured correctly :D ${NC}"
 		echo "Now you can connect to your ISPConfig installation at https://$CFG_HOSTNAME_FQDN:81 or https://IP_ADDRESS:81"
 		echo "You can visit my GitHub profile at https://github.com/servisys/ispconfig_setup/"
-		echo -e "${red}If you setup Roundcube webmail go to http://$CFG_HOSTNAME_FQDN/roundcubemail/installer and configure db connection${NC}"
+		echo -e "${red}If you setup Roundcube webmail go to http://$CFG_HOSTNAME_FQDN:8081/roundcubemail/installer and configure db connection${NC}"
 		echo -e "${red}After that disable access to installer in /etc/httpd/conf.d/roundcubemail.conf${NC}"
 	else
 		echo "${red}Unsupported linux distribution.${NC}"
